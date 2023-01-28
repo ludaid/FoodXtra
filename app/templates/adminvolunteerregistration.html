@@ -1,0 +1,78 @@
+{% load static %}
+{% include 'adminheader.html' %}
+<html>
+    <head>
+        <script type="text/javascript">
+            function register()
+            {
+                if(!isNaN(f.name.value))
+                  {
+                    alert("enter name in character format");
+                    f.name.focus();
+                    return false;
+                  }
+                if(isNaN(f.age.value))
+                  {
+                    alert("enter valid age");
+                    f.age.focus();
+                    return false;
+                  }
+                var a= /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                if(!(f.email.value.match(a)))
+                  {
+                    f.email.focus();
+                    alert("enter the valid email");
+                    return false;
+                  }
+    
+                if(f.phone1.value.length!=10)
+                  {
+                   alert("enter valid mobile number")
+                   f.phone1.focus()
+                   return false;
+                  }
+                if(isNaN(f.phone.value))
+                  {
+                   alert("enter valid mobile number")
+                   f.phone.focus()
+                   return false;
+                  }
+                return true;
+            }
+        </script>
+    </head>
+</html>
+<section class="form">
+    <div class="containera">
+        <div class="contenta">
+            <form action="/admininsertvolunteer/" method="post" name="f" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="" class="labels">Volunteer ID</label><br>
+                <input type="text" name="volunteer_id" class="inputs" value="{{vid}}" readonly><br>
+                <label for="" class="labels">Name</label><br>
+                <input type="text" name="name" class="inputs" required><br>
+                <label for="" class="labels">Age</label><br>
+                <input type="text" name="age" class="inputs" required><br>
+                <label for="" class="labels">Gender</label><br>
+                <input type="radio" name="gender" class="inputsr" value="male"><label class="radio">Male</label> 
+                <input type="radio" name="gender" class="inputsr" value="female"><label class="radio">Female</label>
+                <input type="radio" name="gender" value="Others" class="inputsr"><label class="radio">Others</label> <br>
+                <label for="" class="labels">Location</label><br>
+                <input type="text" name="location" class="inputs" required><br>
+                <label for="" class="labels">Nature of job</label><br>
+                <select name="natureofjob" required>
+                    <option value="vee"></option>
+                    <option value="service" >service</option>
+                </select><br>
+                <label for="" class="labels" >Photo</label><br>
+                <input type="file" name="photo" class="inputs" required><br>
+                <label for="" class="labels">Phone number</label><br>
+                <input type="text" name="phone" class="inputs" required><br>
+                <label for="" class="labels">Email</label><br>
+                <input type="email" name="email" class="inputs" required><br>
+                <button class="btn" onclick="return register();">Register</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% include 'adminfooter.html' %}

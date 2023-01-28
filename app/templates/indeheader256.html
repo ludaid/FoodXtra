@@ -1,0 +1,177 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <style>
+    a {   
+     color: black;   
+    }
+    
+    a:active {
+     color: blue;
+    }
+    
+    a[tabindex]:focus {
+     color:blue;
+     outline: none;
+    }
+
+    html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #wrapper {
+            min-height: 100%; 
+        }
+
+    </style>
+    
+  <title></title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="{% static 'css/1bs.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/1font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/1animate.css' %}">
+  <link rel="stylesheet" href="{% static 'css/1owl.carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'css/1owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/1magnific-popup.css' %}">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="{% static 'css/11templatemo-styles.css' %}">
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a href="/index/" class="navbar-brand">Food<span>.</span>Xtra</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="#">Home</a></li> -->
+        <!-- <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li> -->
+        <li class="active">
+        <li><a href="/publicdonorregistration/">DONOR REGISTRATION</a></li>
+        <li><a href="/publicbeneficiarregistration/">BENEFICIARY REGISTRATION</a></li>
+        <li><a href="/publicrequesttypeselect/">AVAILABLE FOOD</a></li>
+        <li><a href="/publicreview/" class="smoothScroll">REVIEW</a></li>
+        <li><a href="/orderstatuspublicdon/" class="smoothScroll">ORDER STATUS</a></li>
+
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</body>
+</html> -->
+
+
+
+
+{% load static %}
+{% include 'indexheader.html' %}
+<html>
+    <head>
+        <script type="text/javascript">
+            function register()
+            {
+                if(!isNaN(f.name.value))
+                  {
+                    alert("enter name in character format");
+                    f.name.focus();
+                    return false;
+                  }
+                if(isNaN(f.age.value))
+                  {
+                    alert("enter valid age");
+                    f.age.focus();
+                    return false;
+                  }
+                var a= /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                if(!(f.email.value.match(a)))
+                  {
+                    f.email.focus();
+                    alert("enter the valid email");
+                    return false;
+                  }
+    
+                if(f.phone1.value.length!=10)
+                  {
+                   alert("enter valid mobile number")
+                   f.phone1.focus()
+                   return false;
+                  }
+                if(isNaN(f.phone.value))
+                  {
+                   alert("enter valid mobile number")
+                   f.phone.focus()
+                   return false;
+                  }
+                return true;
+            }
+        </script>
+    </head>
+</html>
+<section class="form">
+    <div class="containerc">
+        <div class="contentc" style="display: inline;min-height:1000px;min-width:800px;">
+            <form action="/publicinsertdonor/" method="post" name="f" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="donor_id" class="inputs" value="{{data}}" readonly><br>
+                
+                <label for="" class="labels">Organization Name</label><br>
+                <input placeholder="Name of beneficiary/organization" type="text" name="name" class="inputs" required><br>
+               
+                <label for="" class="labels">Person in charge</label><br>
+                <input placeholder="Name of Manager" type="text" name="Person in charge" class="inputs" required><br>
+               
+                <label for="" class="labels">Pincode</label><br>
+                <input placeholder="Pincode" type="tel" name="pincode" class="inputs" required maxlength="6" pattern="[0-9]{6}"><br>
+                <label for="" class="labels">Address</label><br>
+                <textarea placeholder="Adress" name="address" cols="30" rows="5" required></textarea><br>
+                <label for="" class="labels">Phone Number</label><br>
+                <input placeholder="Phone Number" type="tel" name="phone" class="inputs" required maxlength="10" pattern="[0-9]{10}"><br>
+                <label for="" class="labels" >Alternative number</label><br>
+                <input placeholder="Alternative number" type="tel" name="phone1" class="inputs" required maxlength="10" pattern="[0-9]{10}"><br>
+                <label for="" class="labels" >License or ID Proof</label><br>
+                <input type="file"  name="proof" class="inputs" required><br>
+                <label for="" class="labels">Email</label><br>
+                <input placeholder="Email" type="email" name="email" class="inputs" required><br>
+                <button class="btn" onclick="return register()">Register</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% include 'adminfooter.html' %}

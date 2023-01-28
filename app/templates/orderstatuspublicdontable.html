@@ -1,0 +1,35 @@
+{% load static %}
+{% include 'indexheader.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Status</title>
+     <div class="containert">
+        <div class="contentt">
+            <table id="customers">
+                <tr>
+                    <th>Donor</th>
+                    <th>Address</th>
+                    <th>Phone number</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th></th>
+                    <th>Status</th>
+                </tr>
+               {% for ct in data %}
+               <tr>
+                   <td>{{ct.donation_id.donor_id.organization_name}}</td>
+                   <td>{{ct.donation_id.donor_id.address}}</td>
+                   <td>{{ct.donation_id.donor_id.phone}}</td>
+                   <td>{{ct.request_food}}</td>
+                   <td>{{ct.quantity}}</td>
+                   <td><img src="{{ct.donation_id.photo}}" width="100px" height="100px"></td>
+                   <td>{{ct.status}}</td>
+               {% endfor %}
+               </tr>
+            </table>
+        </div>
+    </div>
+
+{% include 'adminfooter.html' %}

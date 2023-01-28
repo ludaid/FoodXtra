@@ -1,0 +1,96 @@
+
+{% load static %}
+{% include 'indexheader.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+</head>
+<body>
+    <div class="login-wrap" style="min-height:1250px;">
+	<div class="login-html" style="display: inline;height:100%;">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"></label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+        <input type="hidden" name="donor_id" class="inputs" value="{{data}}" readonly><br>
+
+        <div class="group">
+          <label for="user" class="labels">Organization Name</label>
+          <input placeholder="Name of beneficiary/organization" type="text" name="name" class="input" required><br>
+				</div>
+
+				<div class="group">
+          <label for="" class="labels">Person in charge</label><br>
+          <input placeholder="Name of Manager" type="text" name="Person in charge" class="input" required><br>
+				</div>
+
+        <div class="group">
+					<label for="pass" class="label">Create Password</label>
+					<input id="password" type="password" class="input" data-type="password">
+				</div>
+
+        <div class="group">
+					<label for="pass" class="label">Confirm Password</label>
+					<input id="password_validation" type="password" class="input" data-type="password">
+				</div>
+
+				<div class="group">
+					<label for="pass" class="label">Address</label>
+					<input id="address" type="text" class="input" >
+				</div>
+				
+        <div class="group">
+					<label for="pass" class="label">Pincode</label>
+					<input id="pincode" type="text" class="input" >
+				</div>
+				
+        <div class="group">
+					<label for="pass" class="label">Contact person1</label>
+					<input id="contact_person1" type="text" class="input" >
+				</div>
+                
+        <div class="group">
+					<label for="pass" class="label">Contact person2</label>
+					<input id="contact_person2" type="text" class="input" >
+				</div>
+
+        <div class="group">
+					<label for="pass" class="label">Contact person3</label>
+					<input id="contact_person3" type="text" class="input" >
+				</div>
+
+        <div class="group">
+					<label for="pass" class="label">Organization Phone</label>
+					<input id="phone" type="text" class="input" >
+				</div>
+
+        <div class="group">
+					<label for="pass" class="label">Email</label>
+					<input id="email" type="email" class="input" >
+				</div>
+
+                
+        <div class="group">
+					<label for="pass" class="label">Certificate/License of Organization</label>
+					<input id="proof" type="file" class="input" >
+				</div>
+			
+				<div class="group">
+					<input type="submit" class="button" value="Register">
+				</div>
+				
+				
+				
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+</body>
+</html>

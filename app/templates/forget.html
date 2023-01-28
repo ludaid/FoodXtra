@@ -1,0 +1,17 @@
+{% load static %}
+{% include 'indexheader.html' %}
+<div class="form">
+    <div class="containerc">
+        <div class="contentlogin">
+            <form action="/forget1/" method="post" name="f1">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Email" class="inputs" style="margin-bottom:24px"><br>
+                <button class="btn-login">Send Email</button><br>
+
+            </form>
+        
+        </div>
+    </div>
+</div>
+
+{% include 'adminfooter.html' %}

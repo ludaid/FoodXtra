@@ -1,0 +1,57 @@
+{% load static %}
+{% include 'beneficiaryheader.html' %}
+<html>
+    <head>
+        <script type="text/javascript">
+        function register()
+{
+    if(!isNaN(f.name.value))
+    {
+        alert("enter name in character format");
+        f.name.focus();
+        return false;
+    }
+    
+    var a= /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if(!(f.email.value.match(a)))
+    {
+        f.email.focus();
+        alert("enter the valid email");
+        return false;
+    }
+    
+    if(f.phone.value.length!=10)
+    {
+        alert("enter valid mobile number")
+        f.phone.focus()
+        return false;
+    }
+    if(isNaN(f.phone.value))
+    {
+        alert("enter valid mobile number")
+        f.phone.focus()
+        return false;
+    }
+    return true;
+}  
+        </script>
+    </head>
+</html>
+<section class="form">
+    <div class="containerc">
+        <div class="contentc">
+            <form action="/benrequestupdation/{{data.donation_id}}" method="post" name="f" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="request_id" class="inputs" value="{{id}}" readonly><br>
+                <label for="" class="labels">Food</label><br>
+                <input type="text" name="donor" class="inputs" value="{{data.name}}" readonly><br>
+                <label for="" class="labels">Quantity required</label><br>
+                <input type="number" name="quantity" class="inputs" required><br>
+                <label for="" class="labels">Remarks</label><br>
+                <input type="text" name="remark" class="inputs" ><br>
+                <button class="btn" onclick="return register();">Complete Request</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% include 'adminfooter.html' %}

@@ -1,0 +1,34 @@
+{% load static %}
+{% include 'donorheader.html' %}
+<div class="containert">
+    <div class="contentt">
+        <table id="customers">
+            <tr>
+                
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Item</th>
+                <th>Required Quantity</th>
+                
+                
+            </tr>
+           {% for ct in data %}
+           <tr>
+               <td>{{ct.beneficiar_id.name}}</td>
+               <td>{{ct.beneficiar_id.phone}}</td>
+               <td>{{ct.beneficiar_id.address}}</td>
+               <td>{{ct.required_date}}</td>
+               <td>{{ct.required_time}}</td>
+               <td>{{ct.donation_id.name}}</td>
+               <td>{{ct.required_quatity}}</td>
+               
+             
+           {% endfor %}
+           </tr>
+        </table>
+    </div>
+</div>
+{% include 'adminfooter.html' %}

@@ -1,0 +1,83 @@
+{% load static %}
+{% include 'indexheader.html' %}
+<html>
+    <head>
+        <script type="text/javascript">
+        function register()
+{
+    if(!isNaN(f.name.value))
+    {
+        alert("enter name in character format");
+        f.name.focus();
+        return false;
+    }
+    
+    var a= /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if(!(f.email.value.match(a)))
+    {
+        f.email.focus();
+        alert("enter the valid email");
+        return false;
+    }
+    
+    if(f.phone.value.length!=10)
+    {
+        alert("enter valid mobile number")
+        f.phone.focus()
+        return false;
+    }
+    if(isNaN(f.phone.value))
+    {
+        alert("enter valid mobile number")
+        f.phone.focus()
+        return false;
+    }
+    return true;
+    alert("Successfully Registered")
+}  
+        </script>
+    </head>
+</html>
+<section class="form">
+    <div class="containerc">
+        <div class="contentc">
+            <form action="/publicinsertdonation/" method="post" name="f" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="donation_id" class="inputs" value="{{data}}" readonly><br>
+                <input type="text" name="donor_id" class="inputs" value="{{fid}}" readonly><br>
+                <label for="" class="labels">Name</label><br>
+                <input placeholder="Donar Name" type="text" name="name" class="inputs" required><br>
+                <label for="" class="labels">Location</label><br>
+                <textarea placeholder="Current location of food" name="address" cols="30" rows="5" required></textarea><br>
+                <label for="" class="labels">Pincode</label><br>
+                <input placeholder="Pincode" type="tel" name="pincode" class="inputs" required maxlength="6" pattern="[0-9]{6}"><br>
+                <label for="" class="labels">Phone number</label><br>
+                <input placeholder="Phone number" type="tel" name="phone" class="inputs" required maxlength="10" pattern="[0-9]{10}"><br>
+                <label for="" class="labels">Email</label><br>
+                <input placeholder="Email" type="email" name="email" class="inputs" required><br>
+                <label for="" class="labels">Food catagory</label><br>
+                <select name="foodcatagory" required>
+                    <option value="veg">Veg</option>
+                    <option value="nonveg" >Non-veg</option>
+                    
+                </select><br>
+                <label for="" class="labels">Description</label><br>
+                <input type="text" name="Description" class="inputs" required><br>
+                <label for="" class="labels">Quantity</label><br>
+                <input type="number" name="quatity" class="inputs" required><br>
+                <label for="" class="labels" >Photo</label><br>
+                <input type="file" name="photo" class="inputs" required><br>
+                <label for="" class="labels">Date</label><br>
+                <input type="date" name="date" class="inputs" required><br>
+                <label for="" class="labels">Prepared Time</label><br>
+                <input  type="time" name="preparationtime" class="inputs" required><br>
+                <label for="" class="labels">Expiry Time</label><br>
+                <input type="time" name="requiredtime" class="inputs" required><br>
+                <label for="" class="labels">Remark</label><br>
+                <input placeholder="Optional" type="text" name="remark" class="inputs"><br>
+                <button class="btn" onclick="return register();">Complete Food Donation</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% include 'adminfooter.html' %}

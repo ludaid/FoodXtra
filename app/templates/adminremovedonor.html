@@ -1,0 +1,44 @@
+{% load static %}
+{% include 'adminheader.html' %}
+<div class="containert">
+    <div class="contentt">
+        <table id="customers">
+            <tr>
+                <th>donor_id</th>
+                <th>Organization Name</th>
+                <th>Manager</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Alternative Number</th>
+                <th>Pincode</th>
+                <th>Email</th>
+                <!-- <th>Description</th> -->
+                <th>Proof</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+           {% for ct in data %}
+           <tr>
+               <td>{{ct.donor_id}}</td>
+               <td>{{ct.organization_name}}</td>
+               <td>{{ct.person_in_charge_name}}</td>
+               <td>{{ct.address}}</td>
+               <td>{{ct.phone}}</td>
+               <td>{{ct.alternative_phone}}</td>
+               <td>{{ct.pincode}}</td>
+               <td>{{ct.email}}</td>
+               <!-- <td>{{ct.description}}</td> -->
+               <td><img src="{{ct.proof}}" width="100px" height="100px"></td>
+               <td>{{ct.status}}</td>
+               <td>
+                <center>
+                    <button style="color: black;" type="submit" value="Request" class="btnl" onclick="location.href='/removedonor/{{ct.donor_id}}'">Remove</button>
+
+                </center>
+                </td>
+           {% endfor %}
+           </tr>
+        </table>
+    </div>
+</div>
+{% include 'adminfooter.html' %}

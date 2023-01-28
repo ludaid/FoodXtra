@@ -1,0 +1,24 @@
+{% load static %}
+{% include 'beneficiaryheader.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Beneficiary Home</title>
+     <section class="form">
+        <div class="containerc">
+            <div class="contentc">
+                <form action="/beneficiarycomplupdate/" method="post" name="f" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <label for="" class="labels">complaint_id</label><br>
+                    <input type="text" name="complaint_id" class="inputs" value="{{cid}}" readonly><br>
+                    <label for="" class="labels">Describe your issue</label><br>
+                    <textarea name="complaint" cols="30" rows="5" required></textarea>
+                    <button class="btn">Raise Issue</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% include 'adminfooter.html' %}

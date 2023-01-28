@@ -1,0 +1,36 @@
+{% load static %}
+{% include 'donorheader.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Donor Donation Status</title>
+     <div class="containert">
+        <div class="contentt">
+            <table id="customers">
+                <caption>Your Donation Status</caption>
+                <tr>
+                    <th></th>
+                    <th>Item</th>
+                    <th>Veg or Non-veg</th>
+                    <th>Time</th>
+                    <th>Qty</th>    
+                </tr>
+               {% for ct in data %}
+               <tr>
+                   <td><img src="{{ct.photo}}" width="100px" height="100px"></td>
+                   <td>{{ct.name}}</td>
+                   <td>{{ct.foodcatagory}}</td>
+                   <td>{{ct.preparation_time}}</td>
+                   <td>{{ct.quantity}}
+                    <center>
+                        <button style="color: black;" type="submit" value="Request" class="btnl" onclick="location.href='/editquantity/{{ct.donation_id}}'">EDIT</button>
+                        <button style="color: black;" type="submit" value="Request" class="btnl" onclick="location.href='/donorremovefood/{{ct.donation_id}}'">REMOVE</button>
+                    </center>
+                   </td>
+               {% endfor %}
+               </tr>
+            </table>
+        </div>
+    </div>
+
+{% include 'adminfooter.html' %}

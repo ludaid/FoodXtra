@@ -1,0 +1,86 @@
+{% load static %}
+{% include 'indexheader.html' %}
+<html>
+    <head>
+      <style>
+        #renil{
+          margin-left: 65vh;
+          margin-right: 72vh;        }
+      </style>
+      <body>
+        <script type="text/javascript">
+            function register()
+            {
+                if(!isNaN(f.name.value))
+                  {
+                    alert("enter name in character format");
+                    f.name.focus();
+                    return false;
+                  }
+                if(isNaN(f.age.value))
+                  {
+                    alert("enter valid age");
+                    f.age.focus();
+                    return false;
+                  }
+                var a= /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                if(!(f.email.value.match(a)))
+                  {
+                    f.email.focus();
+                    alert("enter the valid email");
+                    return false;
+                  }
+    
+                if(f.phone1.value.length!=10)
+                  {
+                   alert("enter valid mobile number")
+                   f.phone1.focus()
+                   return false;
+                  }
+                if(isNaN(f.phone.value))
+                  {
+                   alert("enter valid mobile number")
+                   f.phone.focus()
+                   return false;
+                  }
+                return true;
+            }
+        </script>
+    </head>
+</html>
+
+<section class="form">
+    <div class="containerc">
+      <div class="contentc"  id="renil">
+        <form action="/publicinsertdonor/" method="post" name="f" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="donor_id" class="inputs" value="{{data}}" readonly><br>
+                
+               
+               
+                <label for="" class="labels">Person in charge</label><br>
+                <input placeholder="" type="text" name="name" class="inputs" required><br>
+               
+                <label for="" class="labels">Organization Name</label><br>
+                <input placeholder="Mandatory for organizations" type="text" name="Person in charge" class="inputs" ><br>
+
+                <label for="" class="labels">Pincode</label><br>
+                <input placeholder="Pincode" type="tel" name="pincode" class="inputs" required maxlength="6" pattern="[0-9]{6}"><br>
+                <label for="" class="labels">Address</label><br>
+                <textarea placeholder="Adress" name="address" cols="30" rows="5" required></textarea><br>
+                <label for="" class="labels">Phone Number</label><br>
+                <input placeholder="Phone Number" type="tel" name="phone" class="inputs" required maxlength="10" pattern="[0-9]{10}"><br>
+                <label for="" class="labels" >Alternative number</label><br>
+                <input placeholder="Alternative number" type="tel" name="phone1" class="inputs" required maxlength="10" pattern="[0-9]{10}"><br>
+                <label for="" class="labels" >License or ID Proof</label><br>
+                <input type="file"  name="proof" class="inputs" required><br>
+                <label for="" class="labels">Email</label><br>
+                <input placeholder="Email" type="email" name="email" class="inputs" required><br>
+                <button class="btn" onclick="return register()">Register</button>
+            </form>
+        </div>
+    </div>
+</section>
+<br>
+</body>
+{% include 'adminfooter.html' %}
