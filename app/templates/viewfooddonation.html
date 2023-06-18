@@ -1,0 +1,40 @@
+{% load static %}
+{% include 'indexheader.html' %}
+
+<div class="containert">
+    <div class="contentt">
+        <br>
+        <input type="hidden" name="donor_id" class="inputs" value="{{data}}" readonly><br>
+        <table id="customers">
+            <tr>
+                <th>Food Category</th>
+               
+                <th>Quantity</th>
+                <th>Preparationtime</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Photo</th>   
+                <th></th>
+            </tr>
+           {% for ct in data %}
+           <tr>
+               <td>{{ct.foodcatagory}}</td>
+            
+               <td>{{ct.quantity}}</td>
+               <td>{{ct.preparation_time}}</td>
+               <td>{{ct.donor_id.address}}</td>
+               <td>{{ct.donor_id.phone}}</td>
+               <td><img src="{{ct.photo}}" width="100px" height="100px"></td>
+               <td>
+                <center>
+                    <button style="color: black;" type="submit" value="Request" class="btnl" onclick="location.href='/foodrequest/{{ct.donation_id}}'">Request</button>
+                </center>
+                </td>
+           {% endfor %}
+           </tr>
+        </table>
+    </body>
+    </div>
+    <br>
+</div>
+{% include 'adminfooter.html' %}

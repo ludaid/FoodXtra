@@ -1,0 +1,35 @@
+{% load static %}
+{% include 'indexheader.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #renil{
+          margin-left: 65vh;
+          margin-right: 72vh;        }
+      </style>
+
+     <title>Review</title>
+     <section class="form">
+        <div class="containerc">
+            <div class="contentc" id="renil">
+                <form action="/publicreviewinsert/" method="post" name="f" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" name="publicreview_id" class="inputs" value="{{data}}" readonly><br>
+                    
+                    <label for="" class="labels">Name</label><br>
+                    <input placeholder="Name" type="text" name="name" class="inputs" required><br>
+                    <label for="" class="labels">Phone Number</label><br>
+                    <input placeholder="Phone Number" type="tel" name="phone" class="inputs" required maxlength="10" pattern="[0-9]{10}"><br>
+
+                    <label for="" class="labels">Review</label><br>
+                    <textarea placeholder="Enter review / complaint" name="review" cols="30" rows="5" required></textarea><br>
+
+                    
+                    <button class="btn" onclick="return register()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% include 'adminfooter.html' %}

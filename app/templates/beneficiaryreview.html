@@ -1,0 +1,28 @@
+{% load static %}
+{% include 'beneficiaryheader.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Beneficiary Home</title>
+     <section class="form">
+        <div class="containerc">
+            <div class="contentc">
+                <form action="/beneficiaryreviewupdate/" method="post" name="f" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <label for="" class="labels">review_id</label><br>
+                    <input type="text" name="review_id" class="inputs" value="{{rid}}" readonly><br>
+                    <!--<label for="" class="labels">Name</label><br>
+                    <input type="text" name="name" class="inputs"><br>-->
+                    <label for="" class="labels">Enter review</label><br>
+                    <textarea name="review" cols="30" rows="5" required></textarea>
+                    <button class="btn">Submit Review</button>
+                    <!--<label for="" class="labels">Address</label><br>
+                    <input type="text" name="address" class="inputs"><br>-->
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% include 'adminfooter.html' %}

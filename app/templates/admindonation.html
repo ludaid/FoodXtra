@@ -1,0 +1,46 @@
+{% load static %}
+{% include 'adminheader.html' %}
+<div class="containert">
+    <div class="contentt">
+        <table id="customers">
+            <tr>
+                <!--<th>Donor_id</th>-->
+                <th>Name</th>
+                <th>Address</th>
+                <th>Pincode</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Food Category</th>
+                <th>Quantity</th>
+                <th>Photo</th>
+                <th>Preparation Time</th>
+                <th>Date</th>
+                <th>Required Time</th>
+                <th>Remark</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+           {% for ct in data %}
+           <tr>
+               <!--<td>{{ct.donor_id}}</td>-->   
+               <td>{{ct.name}}</td>
+               <td>{{ct.donor_id.address}}</td>
+               <td>{{ct.pincode}}</td>
+               <td>{{ct.donor_id.phone}}</td>
+               <td>{{ct.donor_id.email}}</td>
+               <td>{{ct.foodcatagory}}</td>
+               <td>{{ct.quantity}}</td> 
+               <td><img src="{{ct.photo}}" width="100px" height="100px"></td>
+               <td>{{ct.preparation_time}}</td>
+               <td>{{ct.date}}</td>
+               <td>{{ct.required_time}}</td>
+               <td>{{ct.remark}}</td>
+               <td>{{ct.status}}</td>
+               <td><a href="/accept_food/{{ct.donation_id}}">Accept</a>/
+               <a href="/reject_donation/{{ct.donor_id}}">Reject</td>
+           {% endfor %}
+           </tr>
+        </table>
+    </div>
+</div>
+{% include 'adminfooter.html' %}

@@ -1,0 +1,36 @@
+{% load static %}
+{% include 'adminheader.html' %}
+<div class="containert">
+    <div class="contentt">
+        <table id="customers">
+            <tr>
+                <th>beneficiar_id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Address</th>
+                <th>Contact person</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Proof</th>
+                <th></th>
+            </tr>
+           {% for ct in data %}
+           <tr>
+               <td>{{ct.beneficiar_id}}</td>
+               <td>{{ct.name}}</td>
+               <td>{{ct.description}}</td>
+               <td>{{ct.location}}</td>
+               <td>{{ct.address}}</td>
+               <td>{{ct.contact_person}}</td>
+               <td>{{ct.phone}}</td>
+               <td>{{ct.email}}</td>
+               <td><img src="{{ct.proof}}" width="100px" height="100px"></td>
+               <td><a href="/accept_beneficiar/{{ct.beneficiar_id}}">Accept</a>/
+               <a href="/reject_beneficiar/{{ct.beneficiar_id}}">Reject</td>
+           {% endfor %}
+           </tr>
+        </table>
+    </div>
+</div>
+{% include 'adminfooter.html' %}

@@ -1,0 +1,21 @@
+{% load static %}
+{% include 'indexheader.html' %}
+<div class="form">
+    <div class="containerc">
+        <div class="contentlogin">
+            <form action="/orderstatuspublicdontable/" method="post" name="f1">
+                {% csrf_token %}
+
+                <label for="" class="labels">Choose catagory</label><br>
+                <select name="foodcatagory" required>
+                    <option value="Donation Status">Donation Status</option>
+                    <option value="Food Requested Status" >Food Requested Status</option>  
+                </select>
+                <input type="text" name="status" placeholder="Enter Donor_Id" class="inputs"><br>  
+                <button class="btn">Show Status</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% include 'adminfooter.html' %}

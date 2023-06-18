@@ -1,0 +1,166 @@
+body
+{
+    
+}
+form
+{
+}
+
+.contentc
+{ 
+    font:600 16px/18px 'Open Sans',sans-serif;
+    margin-left: 275px;
+   
+	height:100%;
+	position:absolute;
+	padding:50px 60px 40px 96px;
+	background:rgb(36 40 50 / 90%);
+   
+    margin:auto;
+    margin-top: 40px;
+    margin-bottom: 10px;
+	position:relative;
+	box-shadow:0 6px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19)
+
+}
+.contenta
+{ 
+    font:600 16px/18px 'Open Sans',sans-serif;
+    margin-left: 275px;
+    width: 45%;;
+    width: 52%;
+	height:100%;
+	position:absolute;
+	padding:50px 60px 40px 96px;
+	background:rgb(36 40 50 / 90%);
+    max-width:525px;
+	min-height:730px;
+    margin:auto;
+    margin-top: 98px;
+    margin-bottom: 10px;
+	position:relative;
+	box-shadow:0 6px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19)
+
+}
+.containerc
+{
+    padding-top:45px;
+    padding-bottom:30px;
+    background-image: url(https://www.sneb.org/wp-content/uploads/2020/04/food_plate_restaurant-1568x1027.jpg);
+}
+.containera
+{
+    padding-top:104px;
+    padding-bottom:30px;
+    background-image: url(https://www.sneb.org/wp-content/uploads/2020/04/food_plate_restaurant-1568x1027.jpg);
+}
+.form
+{
+    padding: 0px;
+    margin-top: 40px;
+    
+}
+.labels
+{
+    margin-left: 4px;
+    text-transform:uppercase;
+    color:white;
+    font-weight: 500;
+    font-size: 14px;
+}
+.radio
+{
+    margin-left: 4px;
+    color:white;
+    font-weight: 500;
+    font-size: 14px;   
+}
+input[type=radio]
+{
+    margin-left: 45px;
+    padding: 0;
+    margin: 0px;
+    display: inline;
+    outline: none;
+}
+input[type=file]
+{
+    outline: none;
+}
+.inputs
+{
+    outline: none;
+    width: 358px;
+    margin-bottom: 19px;
+    font-weight: 500;
+    font-size: 14px;
+    color: honeydew;
+    border:none;
+	padding:9px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+}
+option:not(:checked) { 
+    background-color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 14px;
+}
+select
+{
+    margin-bottom: 19px;
+    width: 358px;
+    border:none;
+	padding:9px 20px;
+	border-radius:25px;
+	background:rgba(128, 128, 128, 0.1);
+    outline: none;
+}
+.btn
+{
+    margin-left: 50px;
+    width: 235px;
+    margin-top: 25px;
+    background:#1161ee;
+}
+button:focus{
+    outline: none;
+}
+textarea
+{
+    width: 358px;
+    margin-bottom: 19px;
+    font-weight: 500;
+    font-size: 14px;
+    color: honeydew;
+    border:none;
+	padding:9px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+    outline: none;
+}
+.containert
+{
+    background-color: white;
+}
+.contentlogin
+{
+    margin-left: 300px;
+    border-radius: 16px;
+    padding-left: 67px;
+    padding-top: 65px;
+    height: 308px;
+    width: 31pc;
+    background: black;
+    box-shadow:0 6px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19)
+
+}
+.btn-login
+{
+    margin-left: 90px;
+    width: 153px;
+    height: 40px;
+    border-radius: 3px;
+    margin-top: 25px;
+    background:#1161ee;
+    border: 1px;
+}

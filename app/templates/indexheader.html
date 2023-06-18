@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     
+     <title>foodxtra home</title>
+     <style>
+           .menu {
+    height: 100px;
+    z-index: 999;
+}
+
+.menu li {
+    display: inline;
+    float: left;
+    width: auto;
+}
+
+.menu ul {
+    margin-top: 2px;
+}           
+
+.menu a {
+    text-decoration : none;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.menu li:hover {
+       background-color: #16a085;
+}
+
+.active , .inactive {
+    width: 83%;
+}
+.active {
+    background-color: #16a085;
+}
+
+.inactive {
+    background-color: #34495e;
+}
+
+/* Navigation Button */
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-size: 22px;
+  background: #34495e;
+  padding: 48px 40px 31px 40px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #16a085;
+  text-decoration: none;
+}
+.mobile-menu { display:none; }
+
+
+  @media only screen and (max-width: 480px) {
+
+    .mobile-menu { display:inline-block; padding:5px; background:#ccc; border:1px solid #000;}
+    .menu { display:none; }
+    .menu ul { height:auto;}
+    .menu ul li,
+    .menu ul li a { float:none; display:block }
+    .menu ul li a { padding:15px 6px;}
+
+    .show { display:block; }
+  }
+     </style>
+
+     <script>
+          var menu = document.getElementById('menu');
+
+document.getElementById('open-menu').onclick = function() {
+    menu.classList.toggle('show');
+}
+     </script>
+<!-- 
+
+Eatery Cafe Template 
+
+http://www.templatemo.com/tm-515-eatery
+
+-->
+
+   </style>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <link rel="stylesheet" href="{% static 'css/tabless.css' %}">
+     <link rel="stylesheet" href="{% static 'css/dropdownss.css' %}">
+     <link rel="stylesheet" href="{% static 'css/r.css' %}">
+     <link rel="stylesheet" href="{% static 'css/1bs.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/1font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/1animate.css' %}">
+     <link rel="stylesheet" href="{% static 'css/1owl.carousel.css' %}">
+     <link rel="stylesheet" href="{% static 'css/1owl.theme.default.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/1magnific-popup.css' %}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="{% static 'css/11templatemo-styles.css' %}">
+
+</head>
+<body style="background-color:black ;margin-top:128px; ;padding: 0px;" >
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="/index/" class="navbar-brand">Food<span>.</span>Xtra</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="menu">
+                  
+                    <ul class="nav navbar-nav navbar-nav-first">
+                         <li><a href="/publicdonorregistration/" class="smoothScroll">Donor registration</a></li>
+                         <li><a href="/publicbeneficiarregistration/" class="smoothScroll">Beneficiary registration</a></li>
+                         <!-- <li><a href="/fooddonation/" class="smoothScroll">food donation</a></li> -->
+                         <li><a href="/publicrequesttypeselect/" class="smoothScroll">available food</a></li>
+                         <li><a href="/orderstatuspublicdon/" class="smoothScroll">Order Status</a></li>
+                         <li><a href="/publicreview/" class="smoothScroll">Review</a></li>
+                         <li><a href="/login/" class="smoothScroll"> Login</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>

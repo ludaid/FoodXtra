@@ -1,0 +1,36 @@
+{% load static %}
+{% include 'adminheader.html' %}
+<div class="containert">
+    <div class="contentt">
+        <table id="customers">
+            <tr>
+                <th>Request_id</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Remarks</th>
+                <th>Status</th>
+                <th>Action</th>
+                
+            </tr>
+           {% for ct in data %}
+           <tr>
+               <td>{{ct.request_id}}</td>
+               <td>{{ct.donor_id_id}}</td>
+               <td>{{ct.beneficiar_id_id}}</td>
+               <td>{{ct.required_date}}</td>
+               <td>{{ct.required_time}}</td>
+               <td>{{ct.donation_id.name}}</td>
+               <td>{{ct.required_quatity}}</td>
+               <td>{{ct.remark}}</td>
+               <td>{{ct.status}}</td>
+               <td><a href="/acceptbeneficiaryfoodrequest/{{ct.request_id}}">Accept</a>/<a href="/rejectbeneficiaryfoodrequest/{{ct.request_id}}">Reject</a></td>
+           {% endfor %}
+           </tr>
+        </table>
+    </div>
+</div>
+{% include 'adminfooter.html' %}

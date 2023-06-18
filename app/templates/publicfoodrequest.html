@@ -1,0 +1,31 @@
+{% load static %}
+{% include 'indexheader.html' %}
+<html>
+    <head>
+        <style>
+            #renil{
+              margin-left: 65vh;
+              margin-right: 72vh;        }
+          </style>
+        <script type="text/javascript">
+        </script>
+    </head>
+</html>
+<section class="form">
+    <div class="containerc">
+        <div class="contentc" id="renil">
+            <form action="/viewfooddonation/" method="post" name="f" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="" class="labels">Food catagory</label><br>
+                <select name="foodcatagory" required>
+                    <option value="veg">Veg</option>
+                    <option value="nonveg" >Non-veg</option>  
+                    </select><br>
+                    <label for="" class="labels">Pincode</label><br>
+                    <input placeholder="Pincode" type="tel" name="pincode" class="inputs" required maxlength="6" pattern="[0-9]{6}"><br> 
+                <button class="btn" onclick="return register();">Available Food Details</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% include 'adminfooter.html' %}

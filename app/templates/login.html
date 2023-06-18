@@ -1,0 +1,36 @@
+{% load static %}
+{% include 'indexheader.html' %}
+<style>
+    a{
+        color: orangered;
+    }
+              
+  </style>
+<div class="form">
+    <div class="containerc">
+        <div class="contentlogin" >
+            <form action="/log/" method="post" name="f1">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" class="inputs" style="margin-bottom:24px"><br>
+                <input type="password" name="password" placeholder="Password" class="inputs"><br>
+                <button class="btn-login">Log-in</button><br>
+                <div>
+                    <p style="color: white;">&ensp;<a href="/forget">Forgot Password?</a></p>
+                </div>
+                <input type="hidden" value="{{data}}" name="s1">
+                <script>
+                        var a=parseInt(f1.s1.value);
+                        if(a==1)
+                        {
+                            alert("Successfully Registered,Wait for Email confirmation");
+                        }
+                </script>
+
+            </form>
+            
+            
+        </div>
+    </div>
+</div>
+
+{% include 'adminfooter.html' %}

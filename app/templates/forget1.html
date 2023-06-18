@@ -1,0 +1,17 @@
+{% load static %}
+{% include 'indexheader.html' %}
+<div class="form">
+    <div class="containerc">
+        <div class="contentlogin">
+            <form action="/forget3/" method="post" name="f1">
+                {% csrf_token %}
+                <input type="text" name="password" placeholder="Enter new password" class="inputs" style="margin-bottom:24px"><br>
+                <button class="btn-login">Update Password</button><br>
+
+            </form>
+        
+        </div>
+    </div>
+</div>
+
+{% include 'adminfooter.html' %}
