@@ -1,0 +1,30 @@
+{% load static %}
+{% include 'adminheader.html' %}
+<div class="containert">
+    <div class="contentt">
+        <table id="customers">
+            <tr>
+                
+                <th>Sl.No</th>
+                <th>Phone</th>
+                <th>Review</th>
+                <th>Date</th>
+                
+                
+                
+                
+            </tr>
+           {% for ct in data %}
+           <tr>
+               <td>{{ct.publicreview_id}}</td>
+               <td>{{ct.phone}}</td>
+               <td>{{ct.review}}</td>
+               <td>{{ct.date}}</td>
+               
+             
+           {% endfor %}
+           </tr>
+        </table>
+    </div>
+</div>
+{% include 'adminfooter.html' %}

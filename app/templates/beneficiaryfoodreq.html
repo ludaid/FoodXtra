@@ -1,0 +1,25 @@
+{% load static %}
+{% include 'beneficiaryheader.html' %}
+<html>
+    <head>
+        <script type="text/javascript">
+        </script>
+    </head>
+</html>
+<section class="form">
+    <div class="containerc">
+        <div class="contentc">
+            <form action="/beneficiaryfoodreqcomplete/" method="post" name="f" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="pincode" class="inputs" value="{{data}}" readonly><br>
+                <label for="" class="labels">Food catagory</label><br>
+                <select name="foodcatagory" required>
+                    <option value="veg">Veg</option>
+                    <option value="nonveg" >Non-veg</option>  
+                    </select>  
+                <button class="btn" onclick="return register();">Food Request</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% include 'adminfooter.html' %}

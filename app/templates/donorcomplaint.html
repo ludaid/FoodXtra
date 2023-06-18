@@ -1,0 +1,32 @@
+{% load static %}
+{% include 'adminheader.html' %}
+<div class="containert">
+    <div class="contentt">
+        <table id="customers">
+            <tr>
+                
+                <th>Sl.No</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Complaint</th>
+                <th>Date</th>
+                
+                
+                
+                
+            </tr>
+           {% for ct in data %}
+           <tr>
+               <td>{{ct.complaint_id}}</td>
+               <td>{{ct.donor_id_id.organization_name}}</td>
+               <td>{{ct.donor_id_id.phone}}</td>
+               <td>{{ct.complaint}}</td>
+               <td>{{ct.date}}</td>
+               
+             
+           {% endfor %}
+           </tr>
+        </table>
+    </div>
+</div>
+{% include 'adminfooter.html' %}

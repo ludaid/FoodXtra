@@ -1,0 +1,28 @@
+{% load static %}
+{% include 'indexheader.html' %}
+<div class="form">
+    <div class="containerc">
+        <div class="contentlogin">
+            <form action="/orderstatuspublicdontable/" method="post" name="f1">
+                {% csrf_token %}
+                
+                <input type="text" name="phone" placeholder="Enter mobile-number" class="inputs"><br>
+                <button class="btn-login">Show Status</button>
+                <!--<input type="hidden" value="{{data}}" name="s1">-->
+                <script>
+                        var a=parseInt(f1.s1.value);
+                        if(a==1)
+                        {
+                            alert("Food donation completed,now check your status");
+                        }
+                        if(a==2)
+                        {
+                            alert("Food has been Requested,now check your status");   
+                        }
+                </script>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% include 'adminfooter.html' %}

@@ -1,0 +1,15 @@
+{% load static %}
+{% include 'donorheader.html' %}
+<div class="form">
+    <div class="containerc">
+        <div class="contentlogin">
+            <form action="/edit/{{id}}" method="post" name="f1">
+                {% csrf_token %}
+                <input type="text" name="qty" placeholder="Quantity" class="inputs" style="margin-bottom:24px"><br>
+                <button class="btn-login">Update Quantity</button><br>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include 'adminfooter.html' %}

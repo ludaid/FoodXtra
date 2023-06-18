@@ -1,0 +1,35 @@
+{% load static %}
+{% include 'adminheader.html' %}
+<div class="containert">
+    <div class="contentt">
+        <table id="customers">
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>quantity</th>
+                <th>photo</th>
+                <th>preparation time</th>
+                <th>Date</th>
+                <th>Required time</th>
+                <th>catagory</th>
+                <th>Remark</th>
+                <th></th>
+            </tr>
+           {% for ct in data %}
+           <tr>
+               <td>{{ct.name}}</td>
+               <td>{{ct.address}}</td>
+               <td>{{ct.quatity}}</td>
+               <td><img src={{ct.photo}} width="100px" height="100px"></td>
+               <td>{{ct.preparation_time}}</td>
+               <td>{{ct.date}}</td>
+               <td>{{ct.required_time}}</td>
+               <td>{{ct.foodcatagory}}</td>
+               <td>{{ct.remark}}</td>
+               <td><a href="/generaterequest/{{ct.donor_id}}">Request</a></td>
+           {% endfor %}
+           </tr>
+        </table>
+    </div>
+</div>
+{% include 'adminfooter.html' %}

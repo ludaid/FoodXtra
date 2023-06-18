@@ -1,0 +1,33 @@
+{% load static %}
+{% include 'adminheader.html' %}
+<div class="containert">
+    <div class="contentt">
+        <table id="customers">
+            <tr>
+                <th>Volunteer_id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Location</th>
+                <th>Nature of job</th>
+                <th>photo</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+           {% for ct in data %}
+           <tr>
+               <td>{{ct.volunteer_id}}</td>
+               <td>{{ct.name}}</td>
+               <td>{{ct.age}}</td>
+               <td>{{ct.gender}}</td>
+               <td>{{ct.location}}</td>
+               <td>{{ct.natureofjob}}</td>
+               <td><img src="{{ct.photo}}" alt="" width="100px" height="100px"></td>
+               <td>{{ct.email}}</td>
+               <td><a href="/removevolunteer/{{ct.name}}">remove</a></td>
+           {% endfor %}
+           </tr>
+        </table>
+    </div>
+</div>
+{% include 'adminfooter.html' %}

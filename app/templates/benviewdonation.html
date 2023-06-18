@@ -1,0 +1,30 @@
+{% load static %}
+{% include 'beneficiaryheader.html' %}
+
+<div class="containert">
+    <div class="contentt">
+        <br>
+        <table id="customers">
+            <tr>
+                <th>Food Category</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Preparationtime</th>
+                <th>Photo</th>   
+                <th></th>
+            </tr>
+           {% for ct in data %}
+           <tr>
+               <td>{{ct.foodcatagory}}</td>
+               <td>{{ct.name}}</td>
+               <td>{{ct.quantity}}</td>
+               <td>{{ct.preparation_time}}</td>
+               <td><img src="{{ct.photo}}" width="100px" height="100px"></td>
+               <td><a href="/benfoodrequest/{{ct.donation_id}}">request</a></td>
+           {% endfor %}
+           </tr>
+        </table>
+    </body>
+    </div>
+</div>
+{% include 'adminfooter.html' %}
